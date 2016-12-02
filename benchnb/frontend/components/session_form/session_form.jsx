@@ -16,6 +16,17 @@ class SessionForm extends React.Component {
   	return e => this.setState({[property]: e.target.value});
   }
 
+  componentDidUpdate() { // this is a lifecycle method used to perform 
+  	//DOM operations after the data has been updated 
+		this.redirectIfLoggedIn();
+	}
+
+	redirectIfLoggedIn() {
+		if (this.props.loggedIn) {
+			this.props.router.push("/"); // back to root page
+		}
+	}
+
   handleSubmit(e) {
   	e.preventDefault;
   	// Redirect the user to the /#/ route if they are logged in.
@@ -39,7 +50,7 @@ class SessionForm extends React.Component {
   	return(
 			<ul>
   			{errors.map((error, idx) => (
-					<li className="error"key={idx}>{error}></li>
+					<li className="error"key={idx}>{error}</li>
   			))}
   			</ul>
   			)
@@ -90,4 +101,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default withRouter(SessionForm)
+export default withRouter(SessionForm);
