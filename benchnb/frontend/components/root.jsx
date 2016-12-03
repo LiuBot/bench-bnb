@@ -1,11 +1,12 @@
 // Create and export a new functional component that renders an <h1> tag with "Bench BnB" 
 // text and underneath renders props.children. 
 import React from 'react';
-import App from './app'
 import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import App from './app'
 import SessionFormContainer from './session_form/session_form_container';
-import BenchIndexContainer from './bench_index_container'
+// import BenchIndexContainer from './bench_index_container'
+import SearchContainer from './search_container'
 
 // Define a _redirectIfLoggedIn helper method in your Root component. 
 //It should:
@@ -20,14 +21,14 @@ const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
   const currentUser = store.getState().session.currentUser;
   if (currentUser) {
-    replace('/');
+    replace('/'); // redirects you to the root page if you try to fuck around
   }
 }
 	return(
 	<Provider store={store}>
 		<Router history={hashHistory}>
 			<Route path="/" component={App}>
-				<IndexRoute component={BenchIndexContainer} />
+				<IndexRoute component={SearchContainer} />
 				<Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
 				<Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
 			</Route>

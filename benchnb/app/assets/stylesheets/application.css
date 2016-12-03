@@ -18,3 +18,10 @@
 body {
 	    font-family: 'Abel', sans-serif;
 }
+
+/*In the application.css file, make sure to set the width and height of the #map-container to 500px.*/
+
+#map-container {
+	height:500px;
+	width:500px;
+}
