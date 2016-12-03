@@ -14,15 +14,11 @@ import * as APIUtil from '../util/bench_api_util';
 export function fetchBenches() {
 
   return (dispatch) => {
-    // dispatch(requestBenches());
     return APIUtil.fetchBenches() // calls the APIUtil 
       .then(benches => dispatch(receiveBenches(benches)));
   }
 }
 
-// export const requestBenches = () => ({
-// 	type: REQUEST_BENCHES
-// })
 
 export const receiveBenches = (benches) => ({
 	type: RECEIVE_BENCHES,
