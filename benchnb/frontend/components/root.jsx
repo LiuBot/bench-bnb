@@ -4,7 +4,8 @@ import React from 'react';
 import App from './app'
 import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
-import SessionFormContainer from './session_form/session_form_container'
+import SessionFormContainer from './session_form/session_form_container';
+import BenchIndexContainer from './bench_index_container'
 
 // Define a _redirectIfLoggedIn helper method in your Root component. 
 //It should:
@@ -26,6 +27,7 @@ const Root = ({store}) => {
 	<Provider store={store}>
 		<Router history={hashHistory}>
 			<Route path="/" component={App}>
+				<IndexRoute component={BenchIndexContainer} />
 				<Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
 				<Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
 			</Route>

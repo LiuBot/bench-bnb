@@ -3,6 +3,9 @@ import React  from 'react';
 import configureStore from './store/store';
 // import {signup, login, logout} from './util/session_api_util';
 // import {signup, login, logout} from './actions/session_actions';
+// import {fetchBenches} from './util/bench_api_util';
+import {fetchBenches, requestBenches, receiveBenches} from './actions/bench_actions'
+
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -16,7 +19,9 @@ document.addEventListener('DOMContentLoaded', () =>{
 		store = configureStore();
 	}
 
-	// window.store = store;
+//////////
+	window.store = store;
+	window.fetchBenches = fetchBenches;
 	// window.login = login;
 	// window.logout = logout;
 	const root = document.getElementById('root');
