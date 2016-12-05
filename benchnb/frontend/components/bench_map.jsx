@@ -19,10 +19,15 @@ class BenchMap extends React.Component {
     this.map = new google.maps.Map(mapNode, _mapOptions);
 
     this.map.addListener('idle', () => {
-      const { north, south, east, west } = this.map.getBounds().toJSON();
-      const boundsFilter = {
-        northEast: { lat:north, lng: east },
-        southWest: { lat: south, lng: west } }
+      const bounds = this.map.getBounds();
+      const ne = bounds.getNorthEast();
+      const sw = bounds.getSouthWest();
+
+      let boundsFilter = {
+        southWest: {lat: sw.lat(), lng: sw.lng()},
+        northEast: {lat: ne.lat(), lng: ne.lng()}
+      };
+
       this.props.updateFilter('bounds', boundsFilter);
     });
    // idle listener
