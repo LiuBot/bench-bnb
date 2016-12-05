@@ -22,7 +22,8 @@ class BenchMap extends React.Component {
     this.MarkerManager.updateMarkers(benches);
 	}
 
-	componentDidUpdate(benches){
+	componentDidUpdate(){
+		let {benches} = this.props;
 		this.MarkerManager.updateMarkers(benches);
 	}
 
