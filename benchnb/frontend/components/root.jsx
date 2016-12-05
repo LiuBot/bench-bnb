@@ -6,7 +6,8 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app'
 import SessionFormContainer from './session_form/session_form_container';
 // import BenchIndexContainer from './bench_index_container'
-import SearchContainer from './search_container'
+import SearchContainer from './search_container';
+import BenchFormContainer from './bench_form_container';
 
 // Define a _redirectIfLoggedIn helper method in your Root component. 
 //It should:
@@ -31,6 +32,7 @@ const Root = ({store}) => {
 				<IndexRoute component={SearchContainer} />
 				<Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
 				<Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+				<Route path="/benches/new" component={BenchFormContainer}/>
 			</Route>
 
 		</Router>

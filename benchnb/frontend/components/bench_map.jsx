@@ -1,6 +1,12 @@
 import React from 'react';
 import MarkerManager from '../util/marker_manager';
+import {withRouter} from 'react-router';
 
+
+const _getCoordObj = (latLng) =>({
+	lat: latLng.lat(),
+	lng: latLng.lng()
+})
 
 class BenchMap extends React.Component {
 	constructor(props){
@@ -30,10 +36,23 @@ class BenchMap extends React.Component {
 
       this.props.updateFilter('bounds', boundsFilter);
     });
+
+    google.maps.event.addListener(this.map, 'click', event =>{
+    	// LatLng = the latitude/longitude that was below the cursor when the event occurred.
+    	const coords = _getCoordObj(event.latLng);
+    	this.handleClick(coords);
+    })
    // idle listener
     this.MarkerManager = new MarkerManager(this.map)
     this.MarkerManager.updateMarkers(benches);
 	}
+
+	 handleClick(coords){
+    this.props.router.push({
+      pathname: "benches/new",
+      query: coords
+    });
+  }
 
 	componentDidUpdate(){
 		let {benches} = this.props;
@@ -50,4 +69,4 @@ class BenchMap extends React.Component {
 	}
 }
 
-export default BenchMap;
+export default withRouter(BenchMap);
