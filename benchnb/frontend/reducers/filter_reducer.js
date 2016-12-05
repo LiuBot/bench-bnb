@@ -6,7 +6,7 @@
 // the map around and then calling store.getState() in the console.
 
 
-import {UPDATE_BOUNDS} from '../actions/filter_actions';
+import {UPDATE_FILTER} from '../actions/filter_actions';
 import merge from 'lodash/merge';
 
 const _defaultFilters = {
@@ -17,9 +17,9 @@ const FiltersReducer = (state= _defaultFilters, action) =>{
 	Object.freeze(state);
 
 	switch(action.type) {
-		case UPDATE_BOUNDS:
-			const dupState = merge({}, {bounds: action.bounds})
-			return dupState;
+		
+		case UPDATE_FILTER:
+			return Object.assign({}, state, {[action.filter]: action.value})
 		default:
 			return state;
 	}

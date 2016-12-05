@@ -4,9 +4,9 @@ export const fetchBenches = (filters, success, error = defaultError) => {
 	return $.ajax({
 				method: 'GET',
 				url: 'api/benches',
-				success,
 				dataType: 'json',
 				data: filters,
+				success,
 				error
 	})
 }
