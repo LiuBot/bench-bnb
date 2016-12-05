@@ -16,6 +16,7 @@ class BenchForm extends React.Component{
       //   latitude:
       //   longitude: 
       // }
+      this.coords = {lat: props.lat, lng: props.lng}
   		this.state = {
   			description: "",
         seating: 2,
@@ -55,7 +56,8 @@ class BenchForm extends React.Component{
         <form
           onSubmit={this.createBench}>
           <h3>Create a bench!</h3>
-          <label>
+
+          <label>Description:
             <input 
               type="text"
               value={description}
@@ -64,11 +66,30 @@ class BenchForm extends React.Component{
 
           <br />   
 
-           <label>
+           <label>Number of Seats
             <input 
               type="integer"
               value={seating}
               onChange={this.update('seating')}/>
+          </label>
+
+          <br />
+           <label>Latitude:
+            <input 
+              type="number"
+              defaultValue={this.coords.lat}
+              disabled
+            />
+          </label>
+
+          <br />
+
+           <label>Longitude:
+            <input 
+              type="number"
+              defaultValue={this.coords.lng}
+              disabled
+            />
           </label>
 
           <br />
