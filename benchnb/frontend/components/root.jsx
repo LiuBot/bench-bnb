@@ -21,7 +21,7 @@ const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
   const currentUser = store.getState().session.currentUser;
   if (currentUser) {
-    replace('/'); // redirects you to the root page if you try to fuck around
+    replace('/'); // redirects you to the root page if you try to go to the log out or sign up form
   }
 }
 	return(

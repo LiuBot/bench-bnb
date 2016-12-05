@@ -6,15 +6,13 @@
 // Don't forget to defined the corresponding action types.
 // Export fetchBenches and your constants.
 export const RECEIVE_BENCHES = 'RECEIVE_BENCHES';
-// export const REQUEST_BENCHES = 'REQUEST_BENCHES';
 
 import * as APIUtil from '../util/bench_api_util';
 
 
-export function fetchBenches() {
-
+export function fetchBenches(filters) {
   return (dispatch) => {
-    return APIUtil.fetchBenches() // calls the APIUtil 
+    return APIUtil.fetchBenches(filters) // calls the APIUtil 
       .then(benches => dispatch(receiveBenches(benches)));
   }
 }

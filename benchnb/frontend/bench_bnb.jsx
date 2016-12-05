@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 //////////
 	window.store = store;
 	window.fetchBenches = fetchBenches;
-
+	
 	// window.login = login;
 	// window.logout = logout;
 	const root = document.getElementById('root');

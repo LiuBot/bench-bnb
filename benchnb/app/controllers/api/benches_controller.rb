@@ -20,4 +20,5 @@ private
 	def bench_params
 		params.require(:bench).permit(:lat, :lng, :description)
 	end 
+
 end
