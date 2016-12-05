@@ -3,7 +3,8 @@ import BenchIndex from './bench_index';
 import BenchMap from './bench_map';
 
 const Search = ({benches, fetchBenches, updateFilter}) =>( // pass props 
-	<div>
+	<div
+		className="search cf">
 		<BenchMap 
 			updateFilter={updateFilter}
 			benches={benches} />

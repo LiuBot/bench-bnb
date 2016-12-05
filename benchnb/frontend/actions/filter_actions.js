@@ -1,4 +1,4 @@
-import { fetchBenches } from './bench_actions'
+import { fetchBenches } from './bench_actions';
 
 export const UPDATE_FILTER = "UPDATE_FILTER";
 

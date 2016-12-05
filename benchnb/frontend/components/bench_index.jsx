@@ -1,15 +1,11 @@
 import React from 'react';
 
 class BenchIndex extends React.Component {
-
-  // componentDidMount() {
-  //   this.props.fetchBenches();
-  // }
-
   render() {
    	const {benches} = this.props;
    	return(
-   		<div>
+   		<div
+        className="bench-index">
    		<h1>Benches: </h1>
    		<ul>
    			{
