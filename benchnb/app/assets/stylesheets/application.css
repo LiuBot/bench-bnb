@@ -23,6 +23,7 @@ body {
 .bench-index-item{
 	margin:20px;
 	padding:20px;
+	cursor:pointer;
 }
 
 ul {

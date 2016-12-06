@@ -11,6 +11,12 @@ export const fetchBenches = (filters, success, error = defaultError) => {
 	})
 }
 
+export const fetchBench = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/benches/${id}`
+  });
+};
 
 export const createBench = (bench, success, error = defaultError) => {
 	return $.ajax({

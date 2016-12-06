@@ -1,16 +1,35 @@
 import React from 'react';
+import {withRouter} from 'react-router';
 
-const BenchIndexItem = ({bench}) =>{
+class BenchIndexItem extends React.Component{
 
-		return(
-			<div className="bench-index-item">
-				<li key={bench.id}>
-						<label>Description:</label>{bench.description}
+	constructor(props){
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleClick() {
+    const benchId = this.props.bench.id;
+    this.props.router.push(`benches/${benchId}`);
+  }
+
+	
+	render(){
+		const {description} = this.props.bench;
+
+	return(
+			<div className="bench-index-item"
+				onClick={this.handleClick}>
+				
+				<li key={this.props.bench.id}>
+						<label>Description:</label>{description}
 				</li>
 			</div>
-			)
+			
+		)
+	}
 }
 
 
 
-export default BenchIndexItem;
+export default withRouter(BenchIndexItem);

@@ -10,7 +10,8 @@ const Search = ({benches, fetchBenches, updateFilter}) =>( // pass props
 		<h4 className="map-instruction">Click map to add a bench!</h4>
 		<BenchMap 
 			updateFilter={updateFilter}
-			benches={benches} />
+			benches={benches} 
+			singleBench={false}/>
 		<div className="right-half">	
 		<FilterForm
 			updateFilter={updateFilter}

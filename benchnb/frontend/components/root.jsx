@@ -8,6 +8,7 @@ import SessionFormContainer from './session_form/session_form_container';
 // import BenchIndexContainer from './bench_index_container'
 import SearchContainer from './search_container';
 import BenchFormContainer from './bench_form_container';
+import BenchShowContainer from './bench_show_container';
 
 // Define a _redirectIfLoggedIn helper method in your Root component. 
 //It should:
@@ -41,6 +42,7 @@ const Root = ({store}) => {
 				<Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
 				<Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
 				<Route path="/benches/new" component={BenchFormContainer} onEnter={_ensureLoggedIn}/>
+				<Route path="/benches/:benchId" component={BenchShowContainer}/>
 			</Route>
 
 		</Router>

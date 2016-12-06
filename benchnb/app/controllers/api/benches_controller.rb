@@ -1,11 +1,13 @@
 class Api::BenchesController < ApplicationController
 
 	def index
-		@benches = bounds ? Bench.in_bounds(bounds) : Bench.all
+		benches = bounds ? Bench.in_bounds(bounds) : Bench.all
 
 		if (params[:minSeating] && params[:maxSeating])
 			@benches = Bench.where(seating: seating_range)
 		end 
+
+		render :index
 
 	end
 
@@ -17,6 +19,10 @@ class Api::BenchesController < ApplicationController
 		else 
 			render json: @bench.errors.full_messages, status: 401
 		end 
+	end 
+
+	def show
+		@bench = Bench.find(params[:id])
 	end 
 
 private
