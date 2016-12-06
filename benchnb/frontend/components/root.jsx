@@ -20,11 +20,19 @@ import BenchFormContainer from './bench_form_container';
 const Root = ({store}) => {
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-  const currentUser = store.getState().session.currentUser;
-  if (currentUser) {
-    replace('/'); // redirects you to the root page if you try to go to the log out or sign up form
+	  const currentUser = store.getState().session.currentUser;
+	  if (currentUser) {
+	    replace('/'); // redirects you to the root page if you try to go to the log out or sign up form
   }
 }
+
+  const _ensureLoggedIn = (nextState, replace) =>{
+		const currentUser = store.getState().session.currentUser;
+  	if (!currentUser){
+  		replace('/login');
+  	}
+  }
+
 	return(
 	<Provider store={store}>
 		<Router history={hashHistory}>
@@ -32,7 +40,7 @@ const Root = ({store}) => {
 				<IndexRoute component={SearchContainer} />
 				<Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
 				<Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-				<Route path="/benches/new" component={BenchFormContainer}/>
+				<Route path="/benches/new" component={BenchFormContainer} onEnter={_ensureLoggedIn}/>
 			</Route>
 
 		</Router>

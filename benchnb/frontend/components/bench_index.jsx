@@ -5,8 +5,7 @@ class BenchIndex extends React.Component {
   render() {
     const {benches} = this.props;
     return(
-      <div
-        className="bench-index">
+      <div>
       <h1>Benches: </h1>
       <ul>
         {

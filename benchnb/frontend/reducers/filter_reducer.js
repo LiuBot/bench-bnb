@@ -9,7 +9,9 @@
 import {UPDATE_FILTER} from '../actions/filter_actions';
 
 const _defaultFilters = {
-	bounds:{}
+	bounds:{},
+	minSeating: 1,
+  maxSeating: 10
 }
 
 const FiltersReducer = (state= _defaultFilters, action) =>{

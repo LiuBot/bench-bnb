@@ -5,7 +5,9 @@ import Search from './search';
 import {selectAllBenches} from '../reducers/selectors';
 
 const mapStateToProps = (state) => ({
-	benches: selectAllBenches(state)
+	benches: selectAllBenches(state),
+	minSeating: state.filters.minSeating,
+	maxSeating: state.filters.maxSeating,
 })
 
 const mapDispatchToProps = (dispatch) =>({

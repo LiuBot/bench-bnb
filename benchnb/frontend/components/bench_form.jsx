@@ -2,7 +2,7 @@
 
 // Uses controlled inputs to keep track of its form data 
 
-import React from 'react'; 
+import React from 'react';  
 import {withRouter} from 'react-router';
 // Since our BenchMap will need access to the Router, import the withRouter function
 // from react-router. Change the export statement in bench_map.jsx so that we are exporting a wrapped component.
@@ -18,7 +18,7 @@ class BenchForm extends React.Component{
       // }
       this.coords = {lat: props.lat, lng: props.lng}
       this.state = {
-        description: "",
+        description: '',
         seating: 2,
       };
      this.createBench = this.createBench.bind(this); // no autobinding in ES6 so need to do this
@@ -73,11 +73,11 @@ class BenchForm extends React.Component{
           <br />   
 
            <label>Number of Seats
-            <input 
-              type="integer"
-              value={seating}
-              onChange={this.update('seating')}/>
-          </label>
+              <input min='0' 
+                type="number" 
+                value={seating}
+                onChange={this.update("seating")} />
+                </label>
 
           <br />
            <label>Latitude:

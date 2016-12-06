@@ -63,7 +63,6 @@ class BenchMap extends React.Component {
 	render(){
 		return(
 		//render function should return a div with id='map-container' and ref='map'.
-
 		<div id='map-container' ref='map'></div>
 			)
 	}

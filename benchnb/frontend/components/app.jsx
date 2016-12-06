@@ -7,7 +7,6 @@ const App = ({children}) => (
 	<div>
 		<h1>Bench BnB</h1>
 		<GreetingContainer />
-		<h5 className="map-instruction">Click map to add a bench!</h5>
 			{children}
 	</div>
 	)

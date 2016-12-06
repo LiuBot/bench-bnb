@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20161205215504) do
   enable_extension "plpgsql"
 
   create_table "benches", force: :cascade do |t|
-    t.string   "description"
-    t.float    "lat"
-    t.float    "lng"
+    t.string   "description", null: false
+    t.float    "lat", null: false
+    t.float    "lng", null: false
+    t.integer  "seating", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "seating"
   end
 
   create_table "users", force: :cascade do |t|
