@@ -22,6 +22,7 @@ class BenchForm extends React.Component{
         seating: 2,
       };
      this.createBench = this.createBench.bind(this); // no autobinding in ES6 so need to do this
+     this.returnToMain = this.returnToMain.bind(this);
   }
 
   update(property){
@@ -102,6 +103,9 @@ class BenchForm extends React.Component{
           <button>Create Bench</button>
 
         </form>
+
+          <button
+            onClick={this.returnToMain}>Cancel</button>
 
       </div>
       )
