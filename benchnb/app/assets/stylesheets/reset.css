@@ -3,4 +3,14 @@
   content: "";
   display: block;
   clear: both;
-}*/
+}
+
+
+ul{
+	text-decoration:none;
+	padding: 0;
+}
+
+body {
+	text-decoration:none;
+}

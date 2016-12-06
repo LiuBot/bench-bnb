@@ -16,10 +16,18 @@
 
 body {
 	    font-family: 'Abel', sans-serif;
-}
+	}
 
 /*In the application.css file, make sure to set the width and height of the #map-container to 500px.*/
 
+.bench-index-item{
+	margin:20px;
+	padding:20px;
+}
+
+ul {
+  list-style: none;
+}
 
 button {
 	font-family: 'Abel', sans-serif;
@@ -33,6 +41,10 @@ button {
 button:hover{
 	color:white;
 	background:black;
+}
+
+.bench-index-item{
+	border: 1px solid black;
 }
 
 .map-instruction{
@@ -50,20 +62,25 @@ button:hover{
 .bench-form input{
 	margin:10px 15px;
 }
+
 .search {
 	display:block;
-	width:900px;
+	width:1200px;
 }
 
-.bench_index{
-	width:500px;
+.bench-index{
+	-webkit-padding-start: 0;
 	float:left;
-	border: 1px solid black;
+	width: 500px;
+  height: 600px;
+  overflow-y: scroll;
+  padding: 0 10px 10px 10px;
 }
 
 #map-container {
+	display:block;
 	height:500px;
 	width:500px;
 	float:left;
-	margin:0px 50px 0px 15px;
+	margin:0px 30px 0px 15px;
 }

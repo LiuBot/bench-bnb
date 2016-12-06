@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {fetchBenches} from '../actions/bench_actions';
 import BenchIndex from './bench_index';
+import BenchIndexItem from './bench_index_item';
 import {selectAllBenches} from '../reducers/selectors';
 
 const mapStateToProps = (state) => ({
