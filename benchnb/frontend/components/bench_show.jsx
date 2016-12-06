@@ -13,7 +13,8 @@ return (
   <BenchMap benches={benches}
           benchId={benchId}
           singleBench={true}
-          fetchBench={fetchBench} />
+          fetchBench={fetchBench}
+          bench={bench} />
 
   <div className="right-half">
 	<Link to="/">Back to Benches Index</Link>

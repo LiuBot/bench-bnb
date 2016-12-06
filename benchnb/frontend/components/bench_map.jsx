@@ -15,24 +15,29 @@ class BenchMap extends React.Component {
 
 	componentDidMount(){
 		const mapNode = this.refs.map;
-		let {benches, fetchBench, singleBench} = this.props;
+		let {benches, fetchBench, singleBench, bench} = this.props;
 
 		let _mapOptions = {
 			center: { lat: 37.7758, lng: -122.435 }, // this is SF
 			zoom: 13
 		}
     // idle listener
+    // if (singleBench){
+    //   console.log(bench)
+    //   this.map = new google.maps.Map(mapNode, {center: {
+    //     lat: bench.lat,
+    //     lng: bench.lng}, 
+    //   zoom: 13}); // constructor for a map
+    // } else {
+      this.map = new google.maps.Map(mapNode, _mapOptions); // constructor for a map
 
-    this.map = new google.maps.Map(mapNode, _mapOptions); // constructor for a map
+    // }
   
 
     this.MarkerManager = new MarkerManager(this.map)
 
     if (singleBench) {
         fetchBench(this.props.benchId)
-
-        const marker = fetchBench(this.props.benchId)
-        console.log(marker)
     } else {
       this._activateListeners();
       this.MarkerManager.updateMarkers(benches);
@@ -68,13 +73,13 @@ class BenchMap extends React.Component {
   }
 
 	componentDidUpdate(){
-		let {benches} = this.props;
-    if(this.props.singleBench){
+		let {benches, singleBench} = this.props;
+
+    if(singleBench){
      this.MarkerManager.updateMarkers(
+     // grabs just the one bench
       [this.props.benches[Object.keys(this.props.benches)[0]]]
      )
-
-     // grabs just the one bench
    } else{
 		this.MarkerManager.updateMarkers(benches);
    }
