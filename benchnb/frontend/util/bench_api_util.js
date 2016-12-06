@@ -10,3 +10,15 @@ export const fetchBenches = (filters, success, error = defaultError) => {
 				error
 	})
 }
+
+
+export const createBench = (bench, success, error = defaultError) => {
+	return $.ajax({
+		method: 'POST', 
+		url: 'api/benches',
+		dataType: 'json',
+		data: {bench},
+		success,
+		error
+	})
+}

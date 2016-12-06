@@ -20,6 +20,7 @@ body {
 
 /*In the application.css file, make sure to set the width and height of the #map-container to 500px.*/
 
+
 button {
 	font-family: 'Abel', sans-serif;
 	font-size: 14px;
@@ -33,6 +34,22 @@ button:hover{
 	color:white;
 	background:black;
 }
+
+.map-instruction{
+	margin:0px 50px 0px 15px
+}
+
+.bench-form{
+	width:300px;
+	height:300px;
+	margin:0 auto;
+	border: 1px solid black;
+	padding:0px 30px;
+}
+
+.bench-form input{
+	margin:10px 15px;
+}
 .search {
 	display:block;
 	width:900px;
@@ -43,6 +60,7 @@ button:hover{
 	float:left;
 	border: 1px solid black;
 }
+
 #map-container {
 	height:500px;
 	width:500px;

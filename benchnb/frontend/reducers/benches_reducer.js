@@ -1,5 +1,5 @@
 
-import {RECEIVE_BENCHES} from '../actions/bench_actions'
+import {RECEIVE_BENCHES, RECEIVE_BENCH} from '../actions/bench_actions'
 
 
 const BenchesReducer = (state= {}, action) =>{
@@ -8,6 +8,10 @@ const BenchesReducer = (state= {}, action) =>{
 	switch(action.type) {
 		case RECEIVE_BENCHES:
 			return action.benches
+		case RECEIVE_BENCH:
+			return Object.assign({}, state, {
+				[action.bench.id]: action.bench
+			})
 		default:
 			return state;
 	}
